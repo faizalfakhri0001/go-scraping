@@ -133,16 +133,16 @@ func main() {
 					fmt.Printf("\t\tList DPT: %v \n", listDPT)
 					fmt.Printf("\t\tTotal DPT: %v \n", totalDPT)
 				}
-				output := ScripeOut{
-					HS:            listHS,
-					DPT:           listDPT,
-					Total:         totalDPT,
-					NamaKelurahan: row[0],
-					IDKelurahan:   row[4],
-					Line:          idx + 1,
-				}
-				setValuesInCell(new_f, &output)
 			}
+			output := ScripeOut{
+				HS:            listHS,
+				DPT:           listDPT,
+				Total:         totalDPT,
+				NamaKelurahan: row[0],
+				IDKelurahan:   row[4],
+				Line:          idx + 1,
+			}
+			setValuesInCell(new_f, &output)
 		}(new_f)
 
 		if idx == 10 {
