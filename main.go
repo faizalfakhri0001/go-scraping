@@ -7,6 +7,7 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+	"time"
 
 	"github.com/chromedp/cdproto/cdp"
 	"github.com/chromedp/chromedp"
@@ -83,7 +84,7 @@ func main() {
 
 		wg.Add(1)
 		sem <- struct{}{}
-		go func() {
+		go func(new_f *excelize.File) {
 			defer wg.Done()
 			defer func() { <-sem }()
 			url := fmt.Sprintf("https://kawalpemilu.org/h/%s", row[4])
@@ -105,7 +106,7 @@ func main() {
 			var listHS []map[string][]int
 			totalDPT := 0
 
-			fmt.Printf("ID Kelurahan: %s\n", row[4])
+			fmt.Printf("%d.ID Kelurahan: %s\n", idx+1, row[4])
 			for indexNodes, node := range nodes {
 				chromedp.Run(tabCtx,
 					chromedp.Text(".tps-dpt", &dpt, chromedp.ByQuery, chromedp.FromNode(node)),
@@ -131,20 +132,18 @@ func main() {
 					fmt.Printf("\t\tHS Paslon: %v \n", listHS)
 					fmt.Printf("\t\tList DPT: %v \n", listDPT)
 					fmt.Printf("\t\tTotal DPT: %v \n", totalDPT)
-
-					output := ScripeOut{
-						HS:            listHS,
-						DPT:           listDPT,
-						Total:         totalDPT,
-						NamaKelurahan: row[0],
-						IDKelurahan:   row[4],
-						Line:          idx + 1,
-					}
-
-					setValuesInCell(new_f, &output)
 				}
+				output := ScripeOut{
+					HS:            listHS,
+					DPT:           listDPT,
+					Total:         totalDPT,
+					NamaKelurahan: row[0],
+					IDKelurahan:   row[4],
+					Line:          idx + 1,
+				}
+				setValuesInCell(new_f, &output)
 			}
-		}()
+		}(new_f)
 
 		if idx == 10 {
 			break
@@ -154,10 +153,12 @@ func main() {
 	if err := new_f.SaveAs("Results.xlsx"); err != nil {
 		fmt.Println(err)
 	}
+
+	time.Sleep(time.Minute)
 }
 
 func setValuesInCell(f *excelize.File, datas *ScripeOut) {
-	new_sheet := "Result"
+	new_sheet := "Hasil"
 	id, err := strconv.Atoi(datas.IDKelurahan)
 	if err != nil {
 		fmt.Println("Error:", err)
