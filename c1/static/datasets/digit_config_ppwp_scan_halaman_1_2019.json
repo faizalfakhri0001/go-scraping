@@ -1,0 +1,92 @@
+{
+  "numbers": [
+    {
+      "id": "0",
+      "shortName": "dataLL",
+      "displayName": "Data Laki-Laki",
+      "digitCoordinates": [
+[464,506, 620,664],
+[464,506, 664,708],
+[464,506, 708,752]
+      ]
+    },
+    {
+      "id": "1",
+      "shortName": "dataP",
+      "displayName": "Data Perempuan",
+      "digitCoordinates": [
+[464,506, 754,796],
+[464,506, 796,840],
+[464,506, 842,886]
+      ]
+    },
+    {
+      "id": "2",
+      "shortName": "dataJumlah",
+      "displayName": "Data Jumlah",
+      "digitCoordinates": [
+[464,506, 886,928],
+[464,506, 928,974],
+[464,506, 974,1018]
+      ]
+    },
+    {
+      "id": "3",
+      "shortName": "phpLL",
+      "displayName": "Pengguna Hak Pilih Laki-Laki",
+      "digitCoordinates": [
+[672,714, 620,664],
+[672,714, 664,708],
+[672,714, 708,752]
+      ]
+    },
+    {
+      "id": "4",
+      "shortName": "phpPerempuan",
+      "displayName": "Pengguna Hak Pilih Perempuan",
+      "digitCoordinates": [
+[674,714, 752,796],
+[672,714, 796,842],
+[672,714, 842,886]
+      ]
+    },
+    {
+      "id": "5",
+      "shortName": "phpJumlah",
+      "displayName": "Pengguna Hak Pilih Jumlah",
+      "digitCoordinates": [
+[672,714, 884,930],
+[672,714, 930,974],
+[672,714, 974,1018]
+      ]
+    }
+  ],
+  "checkSums": [
+    {
+      "sigma": [
+        "0",
+        "1"
+      ],
+      "total": "2"
+    },
+    {
+      "sigma": [
+        "3",
+        "4"
+      ],
+      "total": "5"
+    }
+  ],
+  "roi": [
+    {
+      "name": "tandaTanangSaksi",
+      "coordinates": [1216,1472, 30,1018]
+    },
+    {
+      "name": "nomorTPS",
+      "coordinates": [102,146, 270,526]
+    }
+
+  ],
+  "referenceForm": "PPWP-2019-scan-halaman1.jpg"
+}

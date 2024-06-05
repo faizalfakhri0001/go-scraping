@@ -1,0 +1,62 @@
+{
+    "numbers": [
+        {
+            "id": "0",
+            "shortName": "olly",
+            "displayName": "Olly Dondokambey, SE dan Drs. Steven O.E Kandouw",
+            "digitCoordinates": [
+                [224,265, 602,645],
+                [224,265, 647,690],
+                [224,265, 692,735]
+            ]
+        },
+        {
+            "id": "1",
+            "shortName": "maya",
+            "displayName": "Maya Rumantir dan Glenny Kairupan",
+            "digitCoordinates": [
+                [267,309, 602,645],
+                [267,308, 647,690],
+                [267,308, 692,735]
+            ]
+        },
+        {
+            "id": "2",
+            "shortName": "benny",
+            "displayName": "Dr. Benny Jozua Mamoto, SH.,M.Si dan David Bobihoe Akib",
+            "digitCoordinates": [
+                [311,352, 601,645],
+                [311,352, 647,690],
+                [311,352, 692,735]
+            ]
+        },
+        {
+            "id": "3",
+            "shortName": "jumlah",
+            "displayName": "Jumlah Suara Sah",
+            "digitCoordinates": [
+                [354,395, 602,645],
+                [354,395, 647,690],
+                [354,395, 692,735]
+            ]
+        },
+        {
+            "id": "4",
+            "shortName": "tidakSah",
+            "displayName": "Jumlah Suara Tidak Sah",
+            "digitCoordinates": [
+                [409,450, 601,645],
+                [409,450, 647,690],
+                [409,450, 693,735]
+            ]
+        }
+
+    ],
+    "checkSums": [
+        {
+            "sigma": ["0", "1", "2"],
+            "total": "3"
+        }
+    ],
+    "referenceForm": "sulawesi-selatan-reference.jpg"
+}
